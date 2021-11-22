@@ -24,7 +24,7 @@ const InitialScreen = () => {
 
     useEffect(() => {
         axios
-            .get("http://3.34.191.82/count")
+            .get("https://dlsrksrndgkq.link/count")
             .then((response) => {
                 setData(response.data.result.count);
             })
