@@ -87,29 +87,29 @@ const InitialContentsBoxStyle = styled.div`
 `;
 
 const TitleAndcontentsDesign = styled.div`
-    position: absolute;
-    left: 55pt;
+    position: relative;
+    left: 50pt;
     right: 103.5pt;
-    top: 111pt;
+    top: 70pt;
 
     .title {
         width: 168pt;
         height: 48pt;
+
         font-size: 25pt;
     }
 
     .contents {
         width: 190pt;
         height: 41pt;
-
         font-size: 14pt;
         color: rgb(153 153 153);
     }
     .heartIcon img {
         width: 200pt;
         height: 200pt;
-        position: absolute;
-        top: 150pt;
+        position: relative;
+        right: 15px;
     }
 
     .countNumber {
@@ -123,8 +123,8 @@ const TitleAndcontentsDesign = styled.div`
 
 export const ButtonDesign = styled.div`
     position: absolute;
-    top: 500pt;
-    left: 26pt;
+    top: 480pt;
+    left: 30pt;
 
     .blackBtn,
     .yellowBtn {

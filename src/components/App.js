@@ -15,8 +15,8 @@ function App() {
 
 export const BasicStyle = styled.div`
     background-image: url(${backImg});
-    width: 375pt;
-    height: 812vh;
+    width: 280pt;
+    height: 700pt;
 `;
 
 export default App;
