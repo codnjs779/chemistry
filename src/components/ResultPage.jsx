@@ -27,7 +27,7 @@ const ResultPage = () => {
 
         return <></>;
     }, []);
-    console.log(result);
+
     const resultContentsBox = () => {
         if (result !== undefined) {
             const mbtiContentResult = result.content.mbti;
@@ -122,17 +122,26 @@ const ResultPage = () => {
 
 const ResultStyle = styled.div`
     width: 375pt;
-    height: 1800pt;
-    margin: auto;
-
+    height: auto;
     background-image: url(${backImg});
+
     progress {
         position: relative;
         top: 40pt;
         height: 20pt;
         width: 280pt;
         left: 24pt;
+        background-color: #2e8080;
     }
+
+    progress[value]::-webkit-progress-value {
+        background-image: -webkit-linear-gradient(-45deg, transparent 33%, rgba(0, 0, 0, 0.1) 33%, rgba(0, 0, 0, 0.1) 66%, transparent 66%),
+            -webkit-linear-gradient(top, rgba(255, 255, 255, 0.25), rgba(0, 0, 0, 0.25)), -webkit-linear-gradient(left, #09c, #f44);
+
+        border-radius: 2px;
+        background-size: 35px 20px, 100% 100%, 100% 100%;
+    }
+
     .scoreBox {
         width: 341pt;
         height: 350pt;
@@ -152,7 +161,8 @@ const ResultStyle = styled.div`
 
     .contentsBox {
         width: 341pt;
-        height: 900pt;
+        height: 100%;
+        padding-bottom: 100%;
         background-color: rgb(255 255 255);
         border-radius: 13pt;
         box-shadow: 2px 2px 10px 2px #e2e0e0;
@@ -168,6 +178,7 @@ const ResultStyle = styled.div`
 
     .contentsBoxContents {
         width: 300pt;
+        height: auto;
         position: relative;
         left: 25pt;
         top: 30pt;
