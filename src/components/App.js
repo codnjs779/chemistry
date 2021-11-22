@@ -14,17 +14,10 @@ function App() {
 }
 
 export const BasicStyle = styled.div`
-    position: absolute;
     width: 375pt;
     height: 812pt;
-    top: 50%;
-    left: 50%;
-    margin: -50px 0 0 -50px;
-
+    margin: 55pt;
     background-image: url(${backImg});
-    input:focus {
-        outline: none;
-    }
 `;
 
 export default App;
