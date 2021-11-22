@@ -130,8 +130,7 @@ export const ButtonDesign = styled.div`
     flex-direction: column;
     position: absolute;
     top: 500pt;
-    right: 35pt;
-
+    left: 40pt;
     .blackBtn,
     .yellowBtn {
         width: 200pt;
