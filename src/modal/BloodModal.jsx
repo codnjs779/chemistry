@@ -60,8 +60,8 @@ let BloodModal = (props) => {
 
 const ModalStyle = styled.div`
     .BloodModal {
-        width: 375pt;
-        height: 337pt;
+        width: 280pt;
+        height: 300pt;
         background-color: rgb(255 255 255);
         border-radius: 35px;
         position: absolute;

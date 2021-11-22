@@ -1,15 +1,17 @@
-import React from "react";
-import styled from "styled-components";
-import { Link } from "react-router-dom";
-import backImg from "../img/0001.PNG";
+import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
-import { useState } from "react";
+import { Link } from "react-router-dom";
+import CopyToClipboard from "react-copy-to-clipboard";
+
 import axios from "axios";
-import { useEffect } from "react";
+
+import styled from "styled-components";
+import { ButtonDesign } from "./InitialScreen";
+import { InputBtnStyle } from "./MeinputPage";
 
 const ResultPage = () => {
     const state = useSelector((state) => state);
-
+    const shareUrl = "https://www.chemistry-test.co.kr/result";
     const [result, setResult] = useState();
 
     useEffect(() => {
@@ -48,26 +50,26 @@ const ResultPage = () => {
 
                         <div className="iconImgAndContent">
                             <div className="imgSet">
-                                <img src={result.img.constellationImg} width="70px" alt="images"></img>
+                                <img src={result.img.constellationImg} width="55px" alt="images"></img>
 
                                 <div className="imgSetTitle">별자리</div>
                                 <div className="imgSetScore">{result.individuallyScore.constellationScore}점</div>
                             </div>
 
                             <div className="imgSet">
-                                <img src={result.img.zodiacSignImg} width="70px" alt="images"></img>
+                                <img src={result.img.zodiacSignImg} width="55px" alt="images"></img>
                                 <div className="imgSetTitle">12지신</div>
                                 <div className="imgSetScore">{result.individuallyScore.zodiacSignScore}점</div>
                             </div>
 
                             <div className="imgSet">
-                                <img src={result.img.bloodImg} width="70px" alt="images"></img>
+                                <img src={result.img.bloodImg} width="55px" alt="images"></img>
                                 <div className="imgSetTitle">혈액형</div>
                                 <div className="imgSetScore">{result.individuallyScore.bloodScore}점</div>
                             </div>
 
                             <div className="imgSet">
-                                <img src={result.img.mbtiImg} width="70px" alt="images"></img>
+                                <img src={result.img.mbtiImg} width="55px" alt="images"></img>
                                 <div className="imgSetTitle">MBTI</div>
                                 <div className="imgSetScore">{result.individuallyScore.mbtiScore}점</div>
                             </div>
@@ -91,23 +93,25 @@ const ResultPage = () => {
                             </div>
                         </div>
                     </div>
-
-                    <ResultButtonDesign>
-                        <Link to="">
-                            <button type="submit" className="blackBtn">
-                                다시하기
-                            </button>
-                        </Link>
-
-                        <button
-                            className="yellowBtn"
-                            onClick={() => {
-                                alert("링크 복사가 완료되었습니다!");
-                            }}
-                        >
-                            결과 링크 공유하기
-                        </button>
-                    </ResultButtonDesign>
+                    <InputBtnStyle>
+                        <ButtonDesign>
+                            <Link to="/">
+                                <button type="submit" className="blackBtn">
+                                    다시하기
+                                </button>
+                            </Link>
+                            <CopyToClipboard text={shareUrl}>
+                                <button
+                                    className="yellowBtn"
+                                    onClick={() => {
+                                        alert("링크 복사가 완료되었습니다!");
+                                    }}
+                                >
+                                    결과 링크 공유하기
+                                </button>
+                            </CopyToClipboard>
+                        </ButtonDesign>
+                    </InputBtnStyle>
                 </>
             );
         }
@@ -121,15 +125,11 @@ const ResultPage = () => {
 };
 
 const ResultStyle = styled.div`
-    width: 375pt;
-    height: auto;
-    background-image: url(${backImg});
-
     progress {
         position: relative;
         top: 40pt;
         height: 20pt;
-        width: 280pt;
+        width: 200pt;
         left: 24pt;
         background-color: #2e8080;
     }
@@ -143,8 +143,8 @@ const ResultStyle = styled.div`
     }
 
     .scoreBox {
-        width: 341pt;
-        height: 350pt;
+        width: 240pt;
+        height: 280pt;
         background-color: rgb(255 255 255);
         border-radius: 13pt;
         box-shadow: 2px 2px 10px 2px #e2e0e0;
@@ -156,11 +156,11 @@ const ResultStyle = styled.div`
     h1 {
         position: relative;
         top: 37pt;
-        left: 25pt;
+        left: 27pt;
     }
 
     .contentsBox {
-        width: 341pt;
+        width: 240pt;
         height: 100%;
         padding-bottom: 100%;
         background-color: rgb(255 255 255);
@@ -177,7 +177,7 @@ const ResultStyle = styled.div`
     }
 
     .contentsBoxContents {
-        width: 300pt;
+        width: 200pt;
         height: auto;
         position: relative;
         left: 25pt;
@@ -186,10 +186,10 @@ const ResultStyle = styled.div`
     .iconImgAndContent {
         display: flex;
         justify-content: space-around;
-        margin-top: 130pt;
+        margin-top: 80pt;
     }
     .iconImgAndContent img {
-        margin-left: 10pt;
+        margin-left: 7pt;
     }
     .imgSetTitle,
     .imgSetScore {
@@ -197,38 +197,11 @@ const ResultStyle = styled.div`
         font-weight: bold;
         margin-left: 10pt;
         text-align: center;
+
+        font-size: 10pt;
     }
     .imgSetScore {
         font-weight: 500;
-    }
-`;
-
-const ResultButtonDesign = styled.div`
-    position: relative;
-    top: 100pt;
-    left: 17pt;
-
-    .blackBtn,
-    .yellowBtn {
-        width: 341pt;
-        height: 53pt;
-        font-size: 18px;
-        text-align: center;
-        line-height: 22pt;
-        font-weight: bold;
-        border-radius: 13pt;
-        border: none;
-        cursor: pointer;
-    }
-
-    .blackBtn {
-        background-color: rgb(34 34 34);
-        color: rgb(255 255 255);
-    }
-    .yellowBtn {
-        margin-top: 20px;
-        background-color: rgb(255 234 70);
-        color: rgb(51 51 51);
     }
 `;
 

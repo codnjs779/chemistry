@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-
 import { Link } from "react-router-dom";
-import { ButtonDesign } from "./InitialScreen";
 import { useDispatch } from "react-redux";
 
-import styled from "styled-components";
 import BloodModal from "../modal/BloodModal";
 import MbtiModal from "../modal/MbtiModal";
+
+import styled from "styled-components";
+import { ButtonDesign } from "./InitialScreen";
 
 const MeinputPage = () => {
     const dispatch = useDispatch();
@@ -113,13 +113,15 @@ const MeinputPage = () => {
             </InputBoxStyle>
 
             <div className="buttonSet">
-                <ButtonDesign>
-                    <Link to="/youpage">
-                        <button type="submit" className="blackBtn" onClick={onClick}>
-                            다음으로
-                        </button>
-                    </Link>
-                </ButtonDesign>
+                <InputBtnStyle>
+                    <ButtonDesign>
+                        <Link to="/youpage">
+                            <button type="submit" className="blackBtn" onClick={onClick}>
+                                다음으로
+                            </button>
+                        </Link>
+                    </ButtonDesign>
+                </InputBtnStyle>
             </div>
         </>
     );
@@ -127,12 +129,12 @@ const MeinputPage = () => {
 
 export const InputBoxStyle = styled.div`
     .inputBox {
-        width: 341pt;
-        height: 487pt;
+        width: 230pt;
+        height: 450pt;
         background-color: rgb(255 255 255);
         position: relative;
-        left: 17pt;
-        top: 120pt;
+        left: 23pt;
+        top: 50pt;
         box-shadow: 2px 2px 10px 2px #e2e0e0;
     }
     div {
@@ -143,8 +145,8 @@ export const InputBoxStyle = styled.div`
 
     label {
         font-weight: bold;
-        width: 53pt;
-        font-size: 15pt;
+        width: 40pt;
+        font-size: 13pt;
         color: rgb(51 51 51);
     }
 
@@ -152,12 +154,12 @@ export const InputBoxStyle = styled.div`
         margin-top: 10pt;
         .genderTitle {
             position: relative;
-            margin-right: 30pt;
+            margin-right: 20pt;
         }
 
         .radioInput {
-            width: 12pt;
-            height: 12pt;
+            width: 10pt;
+            height: 10pt;
         }
 
         .labelGender {
@@ -165,22 +167,24 @@ export const InputBoxStyle = styled.div`
         }
         .labelGender span {
             margin-right: 10pt;
-            font-size: 15pt;
+            font-size: 13pt;
         }
     }
 
     input {
         position: relative;
         border: none;
-        font-size: 12pt;
-        width: 158pt;
-        height: 19pt;
+        font-size: 10pt;
+        width: 130pt;
+        height: 20pt;
         margin-top: 40pt;
         margin-left: 20pt;
     }
-
+    input:focus {
+        outline: none;
+    }
     .line {
-        width: 297pt;
+        width: 180pt;
         height: 1pt;
         position: relative;
 
@@ -195,7 +199,7 @@ export const InputBoxStyle = styled.div`
         border-radius: 5pt;
         font-size: 13pt;
         position: relative;
-        left: 105pt;
+        left: 53pt;
         top: 65pt;
         font-weight: 500;
         color: rgb(51 51 51);
@@ -210,9 +214,15 @@ export const InputBoxStyle = styled.div`
 
 export const TitleStyle = styled.div`
     position: relative;
-    top: 97.5pt;
+    top: 40pt;
     left: 17pt;
-    font-size: 15pt;
+    font-size: 13pt;
+`;
+
+export const InputBtnStyle = styled.div`
+    position: relative;
+    bottom: 430pt;
+    right: 8pt;
 `;
 
 export default MeinputPage;

@@ -33,8 +33,8 @@ const IconModalStyle = styled.div`
         background-color: rgb(255 255 255);
         position: absolute;
         z-index: 2;
-        width: 267pt;
-        height: 177pt;
+        width: 230pt;
+        height: 150pt;
         border-radius: 15pt;
         opacity: 1;
         margin-left: 10pt;
@@ -54,8 +54,8 @@ export const ModalBack = styled.div`
     div {
         position: absolute;
         z-index: 1;
-        width: 375pt;
-        height: 812pt;
+        width: 280pt;
+        height: 700pt;
         background-color: #202020;
         opacity: 0.5;
     }

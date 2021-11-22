@@ -1,15 +1,13 @@
 import React, { useState } from "react";
-
 import { Link } from "react-router-dom";
-import { ButtonDesign } from "./InitialScreen";
 import { useDispatch } from "react-redux";
 
 import BloodModal from "../modal/BloodModal";
-
 import MbtiModal from "../modal/MbtiModal";
 
-import { TitleStyle } from "./MeinputPage";
-import { InputBoxStyle } from "./MeinputPage";
+import { InputBtnStyle, TitleStyle, InputBoxStyle } from "./MeinputPage";
+import { ButtonDesign } from "./InitialScreen";
+
 const YouinputPage = () => {
     const dispatch = useDispatch();
 
@@ -114,13 +112,15 @@ const YouinputPage = () => {
                 </div>
             </InputBoxStyle>
             <div className="buttonSet">
-                <ButtonDesign>
-                    <Link to="/result">
-                        <button type="submit" className="blackBtn" onClick={onClick}>
-                            결과보기
-                        </button>
-                    </Link>
-                </ButtonDesign>
+                <InputBtnStyle>
+                    <ButtonDesign>
+                        <Link to="/result">
+                            <button type="submit" className="blackBtn" onClick={onClick}>
+                                결과보기
+                            </button>
+                        </Link>
+                    </ButtonDesign>
+                </InputBtnStyle>
             </div>
         </>
     );

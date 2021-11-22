@@ -1,11 +1,8 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import { CopyToClipboard } from "react-copy-to-clipboard";
 
 import axios from "axios";
-import { Link } from "react-router-dom";
-
-//fontawesome
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faInfoCircle } from "@fortawesome/free-solid-svg-icons";
 
 //img
 import heart from "../img/heart.png";
@@ -13,11 +10,15 @@ import heart from "../img/heart.png";
 //style
 import styled from "styled-components";
 import IconModal from "../modal/IconModal";
+//fontawesome
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faInfoCircle } from "@fortawesome/free-solid-svg-icons";
 
 const InitialScreen = () => {
     const [infoIconModal, setInfoIconModal] = useState(false);
     const [data, setData] = useState();
 
+    const url = "https://chemistry-test.co.kr ";
     const onClick = () => {
         setInfoIconModal(!infoIconModal);
     };
@@ -56,14 +57,17 @@ const InitialScreen = () => {
                         <Link to="mepage">
                             <button className="blackBtn">시작하기</button>
                         </Link>
-                        <button
-                            className="yellowBtn"
-                            onClick={() => {
-                                alert("링크 복사가 완료되었습니다!");
-                            }}
-                        >
-                            테스트 공유
-                        </button>
+
+                        <CopyToClipboard text={url}>
+                            <button
+                                className="yellowBtn"
+                                onClick={() => {
+                                    alert("링크 복사가 완료되었습니다!");
+                                }}
+                            >
+                                테스트 공유
+                            </button>
+                        </CopyToClipboard>
                     </ButtonDesign>
                 </div>
             </div>
@@ -122,13 +126,15 @@ const TitleAndcontentsDesign = styled.div`
 `;
 
 export const ButtonDesign = styled.div`
+    display: flex;
+    flex-direction: column;
     position: absolute;
-    top: 480pt;
-    left: 30pt;
+    top: 500pt;
+    right: 35pt;
 
     .blackBtn,
     .yellowBtn {
-        width: 230pt;
+        width: 200pt;
         height: 53pt;
         font-size: 18px;
         text-align: center;
