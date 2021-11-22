@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import { ButtonDesign } from "./InitialScreen";
 import backImg from "../img/0001.PNG";
 import { useSelector } from "react-redux";
 import { useState } from "react";
