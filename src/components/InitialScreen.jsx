@@ -34,99 +34,101 @@ const InitialScreen = () => {
     }, []);
 
     return (
-        <div>
-            {infoIconModal === true ? <IconModal setInfoIconModal={setInfoIconModal} /> : null}
-            <Icon>
+        <InitialContentsBoxStyle>
+            <div className="initialContentsBox">
+                {infoIconModal === true ? <IconModal setInfoIconModal={setInfoIconModal} /> : null}
+
                 <FontAwesomeIcon icon={faInfoCircle} className="infoIcon" onClick={onClick} />
-            </Icon>
 
-            <TitleAndcontentsDesign>
-                <h1 className="title">우리의 모든 것</h1>
-                <div className="contents">mbti 별자리 띠 혈액형 모든 궁합을 한번에 확인해보세요!</div>
-                <div className="heartIcon">
-                    <img src={heart} alt="img" />
-                </div>
-                <div className="countNumber">
-                    현재까지 <strong>{data}명</strong>이 참여했어요
-                </div>
-            </TitleAndcontentsDesign>
+                <TitleAndcontentsDesign>
+                    <h1 className="title">우리의 모든 것</h1>
+                    <div className="contents">mbti 별자리 띠 혈액형 모든 궁합을 한번에 확인해보세요!</div>
+                    <div className="heartIcon">
+                        <img src={heart} alt="img" />
+                    </div>
+                    <div className="countNumber">
+                        현재까지 <strong>{data}명</strong>이 참여했어요
+                    </div>
+                </TitleAndcontentsDesign>
 
-            <div className="buttonSet">
-                <ButtonDesign>
-                    <Link to="mepage">
-                        <button className="blackBtn">시작하기</button>
-                    </Link>
-                    <button
-                        className="yellowBtn"
-                        onClick={() => {
-                            alert("링크 복사가 완료되었습니다!");
-                        }}
-                    >
-                        테스트 공유
-                    </button>
-                </ButtonDesign>
+                <div className="buttonSet">
+                    <ButtonDesign>
+                        <Link to="mepage">
+                            <button className="blackBtn">시작하기</button>
+                        </Link>
+                        <button
+                            className="yellowBtn"
+                            onClick={() => {
+                                alert("링크 복사가 완료되었습니다!");
+                            }}
+                        >
+                            테스트 공유
+                        </button>
+                    </ButtonDesign>
+                </div>
             </div>
-        </div>
+        </InitialContentsBoxStyle>
     );
 };
 
-const Icon = styled.div`
-    position: relative;
-    font-size: 19.9pt;
-    width: 25pt;
-    height: 25pt;
-    top: 46.5pt;
-    left: 325.2pt;
-    cursor: pointer;
+const InitialContentsBoxStyle = styled.div`
+    .initialContentsBox {
+        display: flex;
+    }
+
+    .infoIcon {
+        width: 18pt;
+        height: 18pt;
+        top: 46.5pt;
+        left: 250pt;
+        cursor: pointer;
+        position: absolute;
+    }
 `;
 
 const TitleAndcontentsDesign = styled.div`
-    position: relative;
-    left: 103.5pt;
+    position: absolute;
+    left: 55pt;
     right: 103.5pt;
     top: 111pt;
 
     .title {
         width: 168pt;
         height: 48pt;
-        left: 40.5pt;
-        right: 41.5pt;
-        bottom: 99pt;
         font-size: 25pt;
     }
 
     .contents {
-        position: relative;
         width: 190pt;
         height: 41pt;
+
         font-size: 14pt;
         color: rgb(153 153 153);
     }
-    .heartIcon {
-        position: relative;
-        width: 250pt;
-        height: 250pt;
-        right: 45pt;
-        top: 25pt;
+    .heartIcon img {
+        width: 200pt;
+        height: 200pt;
+        position: absolute;
+        top: 150pt;
     }
 
     .countNumber {
-        position: relative;
-        top: 26pt;
+        position: absolute;
         width: 193pt;
         height: 19pt;
+        top: 350pt;
         font-size: 13pt;
     }
 `;
 
 export const ButtonDesign = styled.div`
-    position: relative;
-    top: 200pt;
-    left: 17pt;
+    position: absolute;
+    top: 500pt;
+    left: 26pt;
 
     .blackBtn,
     .yellowBtn {
-        width: 341pt;
+        width: 230pt;
         height: 53pt;
         font-size: 18px;
         text-align: center;
