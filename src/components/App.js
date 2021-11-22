@@ -16,7 +16,8 @@ function App() {
 export const BasicStyle = styled.div`
     width: 375pt;
     height: 812pt;
-    margin: auto;
+    margin-left: 55pt;
+
     background-image: url(${backImg});
     input:focus {
         outline: none;
