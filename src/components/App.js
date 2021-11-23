@@ -1,19 +1,14 @@
-import styled from "styled-components";
 import Rootrouter from "../routers/Rootrouter";
+import { GlobalStyle } from "../styleComponent/GlobalStyle";
 
 function App() {
     return (
         <>
-            <BasicStyle>
+            <GlobalStyle>
                 <Rootrouter />
-            </BasicStyle>
+            </GlobalStyle>
         </>
     );
 }
-
-export const BasicStyle = styled.div`
-    width: 280pt;
-    height: 700pt;
-`;
 
 export default App;

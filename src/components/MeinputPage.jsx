@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
-
+import { useForm } from "react-hook-form";
 import BloodModal from "../modal/BloodModal";
 import MbtiModal from "../modal/MbtiModal";
 
@@ -50,7 +50,7 @@ const MeinputPage = () => {
                     <form onSubmit={handleSubmit}>
                         <div>
                             <label htmlFor="내이름">내 이름</label>
-                            <input type="text" placeholder="이름을 입력해주세요" value={name} onChange={(e) => setName(e.target.value)} />
+                            <input type="text" placeholder="이름을 입력해주세요" value={name} onChange={(e) => setName(e.target.value)} required />
                         </div>
                         <div className="line" />
                         <div className="genderType">
@@ -129,7 +129,7 @@ const MeinputPage = () => {
 
 export const InputBoxStyle = styled.div`
     .inputBox {
-        width: 230pt;
+        width: 250pt;
         height: 450pt;
         background-color: rgb(255 255 255);
         position: relative;

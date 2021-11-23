@@ -86,7 +86,6 @@ const InitialContentsBoxStyle = styled.div`
         top: 46.5pt;
         left: 250pt;
         cursor: pointer;
-        position: absolute;
     }
 `;
 

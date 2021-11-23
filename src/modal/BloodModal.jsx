@@ -60,16 +60,41 @@ let BloodModal = (props) => {
 
 const ModalStyle = styled.div`
     .BloodModal {
-        width: 280pt;
-        height: 300pt;
+        width: 300pt;
+        height: 400pt;
         background-color: rgb(255 255 255);
-        border-radius: 35px;
+        border-radius: 25px;
         position: absolute;
         z-index: 2;
-        top: 550pt;
+        top: 380pt;
         margin-right: 100pt;
     }
 
+    .BloodModal {
+        -webkit-animation: slide-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+        animation: slide-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+    }
+
+    @-webkit-keyframes slide-top {
+        0% {
+            -webkit-transform: translateY(0);
+            transform: translateY(0);
+        }
+        100% {
+            -webkit-transform: translateY(-100px);
+            transform: translateY(-100px);
+        }
+    }
+    @keyframes slide-top {
+        0% {
+            -webkit-transform: translateY(0);
+            transform: translateY(0);
+        }
+        100% {
+            -webkit-transform: translateY(-100px);
+            transform: translateY(-100px);
+        }
+    }
     .bloodTitle {
         font-size: 19pt;
         font-weight: 700;

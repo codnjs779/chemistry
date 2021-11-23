@@ -178,33 +178,58 @@ const MbtiModal = (props) => {
 const MbtiModalStyle = styled.div`
     .MbtiModal {
         width: 280pt;
-        height: 500pt;
+        height: 600pt;
         background-color: rgb(255 255 255);
         border-radius: 35px;
         position: absolute;
         z-index: 2;
-        top: 550pt;
+        top: 250pt;
         margin-right: 100pt;
+    }
+    .MbtiTitle {
+        font-size: 19pt;
+        font-weight: 700;
+        position: relative;
+        left: 30pt;
+        top: 41pt;
+    }
 
-        .MbtiTitle {
-            font-size: 19pt;
-            font-weight: 700;
-            position: relative;
-            left: 30pt;
-            top: 41pt;
-        }
+    .MbtiType {
+        font-size: 16pt;
+        position: relative;
+        top: 64pt;
+        left: 30pt;
+        padding-top: 20pt;
+        cursor: pointer;
+    }
+    .MbtiSet {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
 
-        .MbtiType {
-            font-size: 16pt;
-            position: relative;
-            top: 64pt;
-            left: 30pt;
-            padding-top: 20pt;
-            cursor: pointer;
+    .MbtiModal {
+        -webkit-animation: slide-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+        animation: slide-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+    }
+
+    @-webkit-keyframes slide-top {
+        0% {
+            -webkit-transform: translateY(0);
+            transform: translateY(0);
         }
-        .MbtiSet {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
+        100% {
+            -webkit-transform: translateY(-100px);
+            transform: translateY(-100px);
+        }
+    }
+    @keyframes slide-top {
+        0% {
+            -webkit-transform: translateY(0);
+            transform: translateY(0);
+        }
+        100% {
+            -webkit-transform: translateY(-100px);
+            transform: translateY(-100px);
         }
     }
 `;
