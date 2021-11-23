@@ -127,12 +127,14 @@ const MeinputPage = () => {
 
 export const InputBoxStyle = styled.div`
     .inputBox {
-        width: 40vh;
-        height: 70vh;
+        width: 350px;
+        height: 700px;
         background-color: rgb(255 255 255);
         position: relative;
         top: 120px;
-        margin: 0 auto;
+        position: relative;
+        left: 20px;
+
         box-shadow: 2px 2px 10px 2px #e2e0e0;
     }
 
@@ -192,8 +194,8 @@ export const TitleStyle = styled.div`
     font-size: 1.5rem;
     font-weight: 600;
     position: relative;
-    top: 90px;
     left: 20px;
+    top: 90px;
 `;
 
 export const InputBtnStyle = styled.div`
