@@ -113,13 +113,15 @@ const MeinputPage = () => {
             </InputBoxStyle>
 
             <div className="buttonSet">
-                <ButtonDesign>
-                    <Link to="/youpage">
-                        <button type="submit" className="blackBtn" onClick={onClick}>
-                            다음으로
-                        </button>
-                    </Link>
-                </ButtonDesign>
+                <InputBtnStyle>
+                    <ButtonDesign>
+                        <Link to="/youpage">
+                            <button type="submit" className="blackBtn" onClick={onClick}>
+                                다음으로
+                            </button>
+                        </Link>
+                    </ButtonDesign>
+                </InputBtnStyle>
             </div>
         </>
     );
@@ -133,8 +135,8 @@ export const InputBoxStyle = styled.div`
         position: relative;
         top: 120px;
         position: relative;
-        left: 20px;
 
+        margin: auto;
         box-shadow: 2px 2px 10px 2px #e2e0e0;
     }
 
