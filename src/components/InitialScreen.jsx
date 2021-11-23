@@ -83,8 +83,6 @@ const InitialContentsBoxStyle = styled.div`
     .infoIcon {
         width: 18pt;
         height: 18pt;
-        top: 46.5pt;
-        left: 250pt;
         cursor: pointer;
     }
 `;
@@ -100,27 +98,15 @@ const TitleAndcontentsDesign = styled.div`
         color: rgb(153 153 153);
     }
     .heartIcon img {
-        width: 200pt;
-        height: 200pt;
-        position: relative;
-        right: 15px;
     }
 
     .countNumber {
-        position: absolute;
-        width: 193pt;
-        height: 19pt;
-        top: 350pt;
-        font-size: 13pt;
     }
 `;
 
 export const ButtonDesign = styled.div`
     display: flex;
     flex-direction: column;
-    position: absolute;
-    top: 500pt;
-    left: 40pt;
     .blackBtn,
     .yellowBtn {
         width: 200pt;
