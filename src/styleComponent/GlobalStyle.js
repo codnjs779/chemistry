@@ -4,10 +4,8 @@ import backImg from "../img/0001.PNG";
 
 export const GlobalStyle = styled.div`
     background-image: url(${backImg});
-    display: block;
-    width: 45vh;
+    width: 400px;
     height: 100%;
-
     font-family: "MaruBuri";
-    margin: 0 auto;
+    margin: auto;
 `;

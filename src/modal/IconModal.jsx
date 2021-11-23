@@ -7,22 +7,22 @@ let IconModal = (props) => {
     };
     return (
         <IconModalStyle>
-            <div className="IconModal">
-                <div className="IconModalInfo">
-                    <div className="question">
-                        <strong>문의:</strong> codnjs779@naver.com
-                    </div>
+            <ModalBack>
+                <div className="modalBack" onClick={onClick}></div>
+                <div className="IconModal">
+                    <div className="IconModalInfo">
+                        <div className="question">
+                            <strong>문의:</strong> codnjs779@naver.com
+                        </div>
 
-                    <div className="source">
-                        <strong>출처:</strong>
-                        <div>- MBTI 유형별 궁합</div>
-                        <div>- 네이버 지식백과</div>
-                        <div>- 별자리 궁합표</div>
+                        <div className="source">
+                            <strong>출처:</strong>
+                            <div>- MBTI 유형별 궁합</div>
+                            <div>- 네이버 지식백과</div>
+                            <div>- 별자리 궁합표</div>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <ModalBack>
-                <div onClick={onClick}></div>
             </ModalBack>
         </IconModalStyle>
     );
@@ -51,7 +51,7 @@ const IconModalStyle = styled.div`
 `;
 
 export const ModalBack = styled.div`
-    div {
+    .modalBack {
         position: absolute;
         z-index: 1;
         width: 100%;

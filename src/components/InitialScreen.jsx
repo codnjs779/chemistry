@@ -38,9 +38,9 @@ const InitialScreen = () => {
         <InitialContentsBoxStyle>
             <div className="initialContentsBox">
                 {infoIconModal === true ? <IconModal setInfoIconModal={setInfoIconModal} /> : null}
-
-                <FontAwesomeIcon icon={faInfoCircle} className="infoIcon" onClick={onClick} />
-
+                <div className="infoIcon">
+                    <FontAwesomeIcon icon={faInfoCircle} onClick={onClick} />
+                </div>
                 <TitleAndcontentsDesign>
                     <h1 className="title">우리의 모든 것</h1>
                     <div className="contents">mbti 별자리 띠 혈액형 모든 궁합을 한번에 확인해보세요!</div>
@@ -76,12 +76,12 @@ const InitialScreen = () => {
 };
 
 const InitialContentsBoxStyle = styled.div`
-    background-image: url(${backImg});
+    .initialContentsBox {
+        width: 400px;
+        height: 100%;
+    }
 
     .infoIcon {
-        float: right;
-        margin-top: 20px;
-        margin-right: 10px;
         width: 18pt;
         height: 18pt;
         cursor: pointer;
