@@ -133,7 +133,6 @@ export const InputBoxStyle = styled.div`
         background-color: rgb(255 255 255);
         position: relative;
         top: 120px;
-        position: relative;
         margin: auto;
         box-shadow: 2px 2px 10px 2px #e2e0e0;
     }
