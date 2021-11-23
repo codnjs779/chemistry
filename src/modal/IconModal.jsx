@@ -54,7 +54,7 @@ export const ModalBack = styled.div`
     .modalBack {
         position: absolute;
         z-index: 1;
-        width: 400px;
+        width: 390px;
         height: 100%;
         background-color: #202020;
         opacity: 0.5;

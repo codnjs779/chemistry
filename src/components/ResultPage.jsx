@@ -143,14 +143,14 @@ const ResultStyle = styled.div`
     }
 
     .scoreBox {
-        width: 240pt;
+        width: 350px;
         height: 230pt;
         background-color: rgb(255 255 255);
         border-radius: 13pt;
         box-shadow: 2px 2px 10px 2px #e2e0e0;
         position: relative;
         margin: auto;
-        left: 17pt;
+
         top: 24pt;
     }
     .scoreBox h3,
@@ -171,7 +171,7 @@ const ResultStyle = styled.div`
         top: 70px;
     }
     .contentsBox {
-        width: 240pt;
+        width: 350px;
         height: 100%;
         padding-bottom: 100%;
         background-color: rgb(255 255 255);
@@ -179,7 +179,6 @@ const ResultStyle = styled.div`
         box-shadow: 2px 2px 10px 2px #e2e0e0;
         position: relative;
         top: 40pt;
-        left: 17pt;
         margin: auto;
     }
     .contentsBox h3 {
