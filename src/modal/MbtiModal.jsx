@@ -178,7 +178,7 @@ const MbtiModal = (props) => {
 
 const MbtiModalStyle = styled.div`
     .MbtiModal {
-        width: 400px;
+        width: 380px;
         height: 100%;
         background-color: rgb(255 255 255);
         border-radius: 35px;
