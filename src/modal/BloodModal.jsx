@@ -8,51 +8,52 @@ let BloodModal = (props) => {
     };
     return (
         <ModalStyle>
-            <div className="BloodModal">
-                <div className="bloodTitle">혈액형</div>
-                <div
-                    className="bloodType"
-                    id="A"
-                    onClick={() => {
-                        props.setBlood("A");
-                        props.setBloodModal(false);
-                    }}
-                >
-                    A형
-                </div>
-                <div
-                    className="bloodType"
-                    id="B"
-                    onClick={() => {
-                        props.setBlood("B");
-                        props.setBloodModal(false);
-                    }}
-                >
-                    B형
-                </div>
-                <div
-                    className="bloodType"
-                    id="O"
-                    onClick={() => {
-                        props.setBlood("O");
-                        props.setBloodModal(false);
-                    }}
-                >
-                    O형
-                </div>
-                <div
-                    className="bloodType"
-                    id="AB"
-                    onClick={() => {
-                        props.setBlood("AB");
-                        props.setBloodModal(false);
-                    }}
-                >
-                    AB형
-                </div>
-            </div>
             <ModalBack>
-                <div onClick={onClick}></div>
+                <div className="BloodModal">
+                    <div className="bloodTitle">혈액형</div>
+                    <div
+                        className="bloodType"
+                        id="A"
+                        onClick={() => {
+                            props.setBlood("A");
+                            props.setBloodModal(false);
+                        }}
+                    >
+                        A형
+                    </div>
+                    <div
+                        className="bloodType"
+                        id="B"
+                        onClick={() => {
+                            props.setBlood("B");
+                            props.setBloodModal(false);
+                        }}
+                    >
+                        B형
+                    </div>
+                    <div
+                        className="bloodType"
+                        id="O"
+                        onClick={() => {
+                            props.setBlood("O");
+                            props.setBloodModal(false);
+                        }}
+                    >
+                        O형
+                    </div>
+                    <div
+                        className="bloodType"
+                        id="AB"
+                        onClick={() => {
+                            props.setBlood("AB");
+                            props.setBloodModal(false);
+                        }}
+                    >
+                        AB형
+                    </div>
+                </div>
+
+                <div className="modalBack" onClick={onClick}></div>
             </ModalBack>
         </ModalStyle>
     );
@@ -96,7 +97,7 @@ const ModalStyle = styled.div`
         }
     }
     .bloodTitle {
-        font-size: 19pt;
+        font-size: 1.2rem;
         font-weight: 700;
         position: relative;
         left: 30pt;
@@ -104,7 +105,7 @@ const ModalStyle = styled.div`
     }
 
     .bloodType {
-        font-size: 16pt;
+        font-size: 0.9rem;
         position: relative;
         top: 64pt;
         left: 30pt;

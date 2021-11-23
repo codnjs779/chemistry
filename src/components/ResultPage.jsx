@@ -144,7 +144,7 @@ const ResultStyle = styled.div`
 
     .scoreBox {
         width: 240pt;
-        height: 280pt;
+        height: 230pt;
         background-color: rgb(255 255 255);
         border-radius: 13pt;
         box-shadow: 2px 2px 10px 2px #e2e0e0;
@@ -154,11 +154,21 @@ const ResultStyle = styled.div`
     }
     .scoreBox h3,
     h1 {
-        position: relative;
-        top: 37pt;
-        left: 27pt;
+        font-weight: 600;
+        left: 40px;
     }
 
+    .scoreBox h3 {
+        position: relative;
+        left: 40px;
+        top: 30px;
+        font-size: 1.2rem;
+    }
+    .scoreBox h1 {
+        position: relative;
+        font-size: 2rem;
+        top: 70px;
+    }
     .contentsBox {
         width: 240pt;
         height: 100%;
@@ -173,7 +183,8 @@ const ResultStyle = styled.div`
     .contentsBox h3 {
         position: relative;
         left: 25pt;
-        top: 33pt;
+        top: 25pt;
+        font-weight: 800;
     }
 
     .contentsBoxContents {
@@ -181,7 +192,8 @@ const ResultStyle = styled.div`
         height: auto;
         position: relative;
         left: 25pt;
-        top: 30pt;
+        top: 40pt;
+        line-height: 20px;
     }
     .iconImgAndContent {
         display: flex;

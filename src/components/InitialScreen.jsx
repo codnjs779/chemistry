@@ -6,7 +6,7 @@ import axios from "axios";
 
 //img
 import heart from "../img/heart.png";
-import backImg from "../img/0001.PNG";
+
 //style
 import styled from "styled-components";
 import IconModal from "../modal/IconModal";
@@ -85,10 +85,9 @@ const InitialContentsBoxStyle = styled.div`
         width: 18pt;
         height: 18pt;
         cursor: pointer;
-
         margin: 0 auto;
         position: relative;
-        left: 150px;
+        left: 160px;
         top: 20px;
     }
 `;
@@ -142,7 +141,7 @@ export const ButtonDesign = styled.div`
     flex-direction: column;
     .blackBtn,
     .yellowBtn {
-        width: 300px;
+        width: 330px;
         height: 70px;
         font-size: 1.3rem;
         text-align: center;

@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { useForm } from "react-hook-form";
 import BloodModal from "../modal/BloodModal";
 import MbtiModal from "../modal/MbtiModal";
 
@@ -50,18 +49,18 @@ const MeinputPage = () => {
                     <form onSubmit={handleSubmit}>
                         <div>
                             <label htmlFor="내이름">내 이름</label>
-                            <input type="text" placeholder="이름을 입력해주세요" value={name} onChange={(e) => setName(e.target.value)} required />
+                            <input type="text" placeholder="이름을 입력해주세요" value={name} onChange={(e) => setName(e.target.value)} />
                         </div>
                         <div className="line" />
                         <div className="genderType">
                             <label htmlFor="성별" className="genderTitle">
                                 성별
                             </label>
-                            <input type="radio" className="radioInput" value="male" onChange={(e) => setGender(e.target.value)} />
+                            <input type="radio" className="radioInput" value="male" name="gener" onChange={(e) => setGender(e.target.value)} />
                             <label htmlFor="남" className="labelGender">
                                 <span>남</span>
                             </label>
-                            <input type="radio" className="radioInput" value="female" onChange={(e) => setGender(e.target.value)} />
+                            <input type="radio" className="radioInput" value="female" name="gener" onChange={(e) => setGender(e.target.value)} />
                             <label htmlFor="여" className="labelGender">
                                 <span>여</span>
                             </label>
@@ -129,13 +128,12 @@ const MeinputPage = () => {
 
 export const InputBoxStyle = styled.div`
     .inputBox {
-        width: 350px;
-        height: 700px;
+        width: 360px;
+        height: 450px;
         background-color: rgb(255 255 255);
         position: relative;
         top: 120px;
         position: relative;
-
         margin: auto;
         box-shadow: 2px 2px 10px 2px #e2e0e0;
     }
@@ -144,20 +142,19 @@ export const InputBoxStyle = styled.div`
         font-weight: bold;
         font-size: 1rem;
         color: rgb(51 51 51);
+        margin-left: 15px;
     }
 
     .genderType {
-        margin-top: 10pt;
-        .genderTitle {
-            position: relative;
-        }
-
         .radioInput {
+            margin-left: 30px;
         }
 
         .labelGender {
+            position: relative;
         }
         .labelGender span {
+            padding: 10px;
         }
     }
 
@@ -165,7 +162,11 @@ export const InputBoxStyle = styled.div`
         position: relative;
         border: none;
         font-size: 1.1rem;
+        margin: 30px 10px 10px 10px;
+        width: auto;
+        left: 30px;
     }
+
     input:focus {
         outline: none;
     }
@@ -173,22 +174,29 @@ export const InputBoxStyle = styled.div`
         width: 180pt;
         height: 1pt;
         position: relative;
+        margin: auto;
+        left: 30px;
         background-color: rgb(228 228 228);
     }
 
     .mbtiLink {
         cursor: pointer;
         background-color: rgb(238 238 238);
-
         border-radius: 5pt;
         font-size: 1.3rem;
         position: relative;
-
         font-weight: 500;
         color: rgb(51 51 51);
+        width: 180px;
+        height: 45px;
+        margin: auto;
+        text-align: center;
+        top: 40px;
     }
 
     .mbtiLink span {
+        position: relative;
+        top: 12px;
     }
 `;
 
@@ -196,7 +204,7 @@ export const TitleStyle = styled.div`
     font-size: 1.5rem;
     font-weight: 600;
     position: relative;
-    left: 20px;
+    left: 30px;
     top: 90px;
 `;
 
