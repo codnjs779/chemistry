@@ -3,8 +3,10 @@ import "./reset.css";
 import backImg from "../img/0001.PNG";
 
 export const GlobalStyle = styled.div`
-    width: 375px;
-    height: 812px;
-    margin: auto;
     background-image: url(${backImg});
+    display: block;
+    width: 45vh;
+    height: 140vh;
+    font-family: "MaruBuri";
+    margin: auto;
 `;

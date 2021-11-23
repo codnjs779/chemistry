@@ -90,22 +90,13 @@ const InitialContentsBoxStyle = styled.div`
 `;
 
 const TitleAndcontentsDesign = styled.div`
-    position: relative;
-    left: 50pt;
-    right: 103.5pt;
-    top: 70pt;
-
     .title {
-        width: 168pt;
-        height: 48pt;
-
-        font-size: 25pt;
+        font-size: 2.1rem;
     }
 
     .contents {
-        width: 190pt;
-        height: 41pt;
-        font-size: 14pt;
+        font-size: 1.1rem;
+        text-align: center;
         color: rgb(153 153 153);
     }
     .heartIcon img {
