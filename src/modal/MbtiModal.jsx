@@ -179,13 +179,13 @@ const MbtiModal = (props) => {
 const MbtiModalStyle = styled.div`
     .MbtiModal {
         width: 400px;
-        height: 100%;
+        height: 600px;
         background-color: rgb(255 255 255);
         border-radius: 35px;
         position: absolute;
         z-index: 2;
         top: 250pt;
-        margin-right: 100pt;
+        margin: auto;
     }
     .MbtiTitle {
         font-size: 1.4rem;
