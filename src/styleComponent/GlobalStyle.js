@@ -6,7 +6,8 @@ export const GlobalStyle = styled.div`
     background-image: url(${backImg});
     display: block;
     width: 45vh;
-    height: 130vh;
+    height: 100%;
+
     font-family: "MaruBuri";
-    margin: auto;
+    margin: 0 auto;
 `;

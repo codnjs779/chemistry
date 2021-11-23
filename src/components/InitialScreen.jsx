@@ -6,7 +6,7 @@ import axios from "axios";
 
 //img
 import heart from "../img/heart.png";
-
+import backImg from "../img/0001.PNG";
 //style
 import styled from "styled-components";
 import IconModal from "../modal/IconModal";
@@ -48,7 +48,7 @@ const InitialScreen = () => {
                         <img src={heart} alt="img" />
                     </div>
                     <div className="countNumber">
-                        현재까지 <strong>{data}명</strong>이 참여했어요
+                        현재까지 <span>{data}</span>명이 참여했어요
                     </div>
                 </TitleAndcontentsDesign>
 
@@ -76,11 +76,12 @@ const InitialScreen = () => {
 };
 
 const InitialContentsBoxStyle = styled.div`
-    .initialContentsBox {
-        display: flex;
-    }
+    background-image: url(${backImg});
 
     .infoIcon {
+        float: right;
+        margin-top: 20px;
+        margin-right: 10px;
         width: 18pt;
         height: 18pt;
         cursor: pointer;
@@ -89,35 +90,63 @@ const InitialContentsBoxStyle = styled.div`
 
 const TitleAndcontentsDesign = styled.div`
     .title {
+        text-align: center;
         font-size: 2.1rem;
+        width: 230px;
+        margin: 0 auto;
+        position: relative;
+        top: 100px;
     }
 
     .contents {
-        font-size: 1.1rem;
         text-align: center;
+        font-size: 1.1rem;
+        width: 250px;
+        margin: 0 auto;
         color: rgb(153 153 153);
+        position: relative;
+        top: 120px;
+    }
+    .heartIcon {
+        text-align: center;
     }
     .heartIcon img {
+        width: 250px;
+        margin: 0 auto;
+        position: relative;
+        top: 160px;
     }
 
     .countNumber {
+        text-align: center;
+        margin: 0 auto;
+        position: relative;
+        top: 170px;
+    }
+
+    span {
+        font-weight: 800;
     }
 `;
 
 export const ButtonDesign = styled.div`
+    text-align: center;
     display: flex;
+    position: relative;
+    top: 230px;
     flex-direction: column;
     .blackBtn,
     .yellowBtn {
-        width: 200pt;
-        height: 53pt;
-        font-size: 18px;
+        width: 300px;
+        height: 70px;
+        font-size: 1.3rem;
         text-align: center;
         line-height: 22pt;
         font-weight: bold;
         border-radius: 13pt;
         border: none;
         cursor: pointer;
+        margin: 0 auto;
     }
 
     .blackBtn {

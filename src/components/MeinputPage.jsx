@@ -113,15 +113,13 @@ const MeinputPage = () => {
             </InputBoxStyle>
 
             <div className="buttonSet">
-                <InputBtnStyle>
-                    <ButtonDesign>
-                        <Link to="/youpage">
-                            <button type="submit" className="blackBtn" onClick={onClick}>
-                                다음으로
-                            </button>
-                        </Link>
-                    </ButtonDesign>
-                </InputBtnStyle>
+                <ButtonDesign>
+                    <Link to="/youpage">
+                        <button type="submit" className="blackBtn" onClick={onClick}>
+                            다음으로
+                        </button>
+                    </Link>
+                </ButtonDesign>
             </div>
         </>
     );
@@ -129,24 +127,18 @@ const MeinputPage = () => {
 
 export const InputBoxStyle = styled.div`
     .inputBox {
-        width: 250pt;
-        height: 450pt;
+        width: 40vh;
+        height: 70vh;
         background-color: rgb(255 255 255);
         position: relative;
-        left: 23pt;
-        top: 50pt;
+        top: 120px;
+        margin: 0 auto;
         box-shadow: 2px 2px 10px 2px #e2e0e0;
-    }
-    div {
-        position: relative;
-        top: 30pt;
-        left: 26pt;
     }
 
     label {
         font-weight: bold;
-        width: 40pt;
-        font-size: 13pt;
+        font-size: 1rem;
         color: rgb(51 51 51);
     }
 
@@ -154,31 +146,21 @@ export const InputBoxStyle = styled.div`
         margin-top: 10pt;
         .genderTitle {
             position: relative;
-            margin-right: 20pt;
         }
 
         .radioInput {
-            width: 10pt;
-            height: 10pt;
         }
 
         .labelGender {
-            margin-right: 2pt;
         }
         .labelGender span {
-            margin-right: 10pt;
-            font-size: 13pt;
         }
     }
 
     input {
         position: relative;
         border: none;
-        font-size: 10pt;
-        width: 130pt;
-        height: 20pt;
-        margin-top: 40pt;
-        margin-left: 20pt;
+        font-size: 1.1rem;
     }
     input:focus {
         outline: none;
@@ -187,42 +169,35 @@ export const InputBoxStyle = styled.div`
         width: 180pt;
         height: 1pt;
         position: relative;
-
         background-color: rgb(228 228 228);
     }
 
     .mbtiLink {
         cursor: pointer;
         background-color: rgb(238 238 238);
-        width: 129pt;
-        height: 38pt;
+
         border-radius: 5pt;
-        font-size: 13pt;
+        font-size: 1.3rem;
         position: relative;
-        left: 53pt;
-        top: 65pt;
+
         font-weight: 500;
         color: rgb(51 51 51);
     }
 
     .mbtiLink span {
-        position: relative;
-        left: 21pt;
-        top: 10pt;
     }
 `;
 
 export const TitleStyle = styled.div`
+    font-size: 1.5rem;
+    font-weight: 600;
     position: relative;
-    top: 40pt;
-    left: 17pt;
-    font-size: 13pt;
+    top: 90px;
+    left: 20px;
 `;
 
 export const InputBtnStyle = styled.div`
-    position: relative;
-    bottom: 430pt;
-    right: 8pt;
+    margin: 0 auto;
 `;
 
 export default MeinputPage;
