@@ -27,16 +27,6 @@ const YouinputPage = () => {
     };
 
     const onClick = () => {
-        dispatch({
-            type: "ADD_YOU_DATA",
-            payload: {
-                name,
-                gender,
-                born,
-                blood,
-                mbti,
-            },
-        });
         if (name.length === 0) {
             alert("이름을 입력해주세요");
         }
@@ -54,6 +44,16 @@ const YouinputPage = () => {
         }
         if (name.length !== 0 && gender.length !== 0 && born.length !== 0 && blood.length !== 0 && mbti.length !== 0) {
             navigate("/result");
+            dispatch({
+                type: "ADD_YOU_DATA",
+                payload: {
+                    name,
+                    gender,
+                    born,
+                    blood,
+                    mbti,
+                },
+            });
         }
     };
 
