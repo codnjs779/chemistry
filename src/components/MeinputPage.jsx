@@ -189,11 +189,12 @@ export const InputBoxStyle = styled.div`
         background-color: rgb(238 238 238);
         border-radius: 5pt;
         font-size: 1.3rem;
-        position: relative;
         font-weight: 500;
         color: rgb(51 51 51);
         width: 180px;
         height: 45px;
+        position: relative;
+        bottom: 30px;
         margin: auto;
         text-align: center;
     }
@@ -209,7 +210,7 @@ export const InputBoxStyle = styled.div`
         color: rgb(51 51 51);
         margin-left: 15px;
         display: inline-block;
-        width: 66px;
+        width: 70px;
     }
 `;
 

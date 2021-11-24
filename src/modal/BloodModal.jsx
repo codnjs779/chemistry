@@ -64,7 +64,7 @@ const ModalStyle = styled.div`
         width: 400px;
         height: 500px;
         background-color: rgb(255 255 255);
-        border-radius: 25px;
+        border-radius: 35px;
         position: absolute;
         z-index: 2;
         top: 310pt;
