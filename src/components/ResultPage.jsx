@@ -189,7 +189,7 @@ const ResultStyle = styled.div`
     }
 
     .contentsBoxContents {
-        width: 200pt;
+        width: 220pt;
         height: auto;
         position: relative;
         left: 25pt;

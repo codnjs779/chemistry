@@ -52,7 +52,6 @@ let BloodModal = (props) => {
                         AB형
                     </div>
                 </div>
-
                 <div className="modalBack" onClick={onClick}></div>
             </ModalBack>
         </ModalStyle>

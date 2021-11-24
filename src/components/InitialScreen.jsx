@@ -79,6 +79,7 @@ const InitialContentsBoxStyle = styled.div`
     .initialContentsBox {
         width: 400px;
         height: 100%;
+        margin: auto;
     }
 
     .infoIcon {

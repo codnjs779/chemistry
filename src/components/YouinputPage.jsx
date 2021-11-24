@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+
 import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 import BloodModal from "../modal/BloodModal";
 import MbtiModal from "../modal/MbtiModal";
@@ -10,6 +11,7 @@ import { ButtonDesign } from "./InitialScreen";
 
 const YouinputPage = () => {
     const dispatch = useDispatch();
+    let navigate = useNavigate();
 
     const [bloodModal, setBloodModal] = useState(false);
     const [mbtiModal, setMbtiModal] = useState(false);
@@ -24,7 +26,7 @@ const YouinputPage = () => {
         e.preventDefault();
     };
 
-    const onClick = () =>
+    const onClick = () => {
         dispatch({
             type: "ADD_YOU_DATA",
             payload: {
@@ -35,6 +37,25 @@ const YouinputPage = () => {
                 mbti,
             },
         });
+        if (name.length === 0) {
+            alert("이름을 입력해주세요");
+        }
+        if (gender.length === 0) {
+            alert("성별을 선택해주세요");
+        }
+        if (born.length === 0) {
+            alert("생년월일 8자리를 입력해주세요");
+        }
+        if (blood.length === 0) {
+            alert("혈액형을 선택해주세요");
+        }
+        if (mbti.length === 0) {
+            alert("mbti를 선택해주세요");
+        }
+        if (name.length !== 0 && gender.length !== 0 && born.length !== 0 && blood.length !== 0 && mbti.length !== 0) {
+            navigate("/result");
+        }
+    };
 
     return (
         <>
@@ -100,6 +121,16 @@ const YouinputPage = () => {
                             />
                         </div>
                         <div className="line" />
+
+                        <div className="buttonSet">
+                            <InputBtnStyle>
+                                <ButtonDesign>
+                                    <button type="submit" className="blackBtn" onClick={onClick}>
+                                        결과보기
+                                    </button>
+                                </ButtonDesign>
+                            </InputBtnStyle>
+                        </div>
                     </form>
                     <div
                         className="mbtiLink"
@@ -111,17 +142,6 @@ const YouinputPage = () => {
                     </div>
                 </div>
             </InputBoxStyle>
-            <div className="buttonSet">
-                <InputBtnStyle>
-                    <ButtonDesign>
-                        <Link to="/result">
-                            <button type="submit" className="blackBtn" onClick={onClick}>
-                                결과보기
-                            </button>
-                        </Link>
-                    </ButtonDesign>
-                </InputBtnStyle>
-            </div>
         </>
     );
 };

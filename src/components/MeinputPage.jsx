@@ -1,7 +1,6 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
 
 import BloodModal from "../modal/BloodModal";
 import MbtiModal from "../modal/MbtiModal";
@@ -11,6 +10,7 @@ import { ButtonDesign } from "./InitialScreen";
 
 const MeinputPage = () => {
     const dispatch = useDispatch();
+    let navigate = useNavigate();
 
     const [bloodModal, setBloodModal] = useState(false);
     const [mbtiModal, setMbtiModal] = useState(false);
@@ -21,29 +21,40 @@ const MeinputPage = () => {
     const [blood, setBlood] = useState("");
     const [mbti, setMbti] = useState("");
 
-    const onClick = () => {
-        dispatch({
-            type: "ADD_ME_DATA",
-            payload: {
-                name,
-                gender,
-                born,
-                blood,
-                mbti,
-            },
-        });
+    const handleSubmit = (e) => {
+        e.preventDefault();
     };
 
-    // const handleSubmit = (e) => {
-    //     e.preventDefault();
-    // };
-
-    const {
-        register,
-        handleSubmit,
-        formState: { errors },
-    } = useForm();
-    const onSubmit = () => console.log("htll");
+    const onClick = () => {
+        if (name.length === 0) {
+            alert("이름을 입력해주세요");
+        }
+        if (gender.length === 0) {
+            alert("성별을 선택해주세요");
+        }
+        if (born.length === 0) {
+            alert("생년월일 8자리를 입력해주세요");
+        }
+        if (blood.length === 0) {
+            alert("혈액형을 선택해주세요");
+        }
+        if (mbti.length === 0) {
+            alert("mbti를 선택해주세요");
+        }
+        if (name.length !== 0 && gender.length !== 0 && born.length !== 0 && blood.length !== 0 && mbti.length !== 0) {
+            navigate("/youpage");
+            dispatch({
+                type: "ADD_ME_DATA",
+                payload: {
+                    name,
+                    gender,
+                    born,
+                    blood,
+                    mbti,
+                },
+            });
+        }
+    };
 
     return (
         <>
@@ -56,12 +67,18 @@ const MeinputPage = () => {
 
             <InputBoxStyle>
                 <div className="inputBox">
-                    <form onSubmit={handleSubmit(onSubmit)}>
+                    <form onSubmit={handleSubmit}>
                         <div>
                             <label htmlFor="내이름">내 이름</label>
-                            <input type="text" {...register("name", { required: true })} placeholder="이름을 입력해주세요" value={name} onChange={(e) => setName(e.target.value)} />
+                            <input
+                                type="text"
+                                placeholder="이름을 입력해주세요"
+                                onChange={(e) => {
+                                    setName(e.target.value);
+                                }}
+                            />
                         </div>
-                        {errors.message && alert("이름을 입력하지 않았습니다")}
+
                         <div className="line" />
 
                         <div className="genderType">
@@ -115,11 +132,9 @@ const MeinputPage = () => {
                         <div className="buttonSet">
                             <InputBtnStyle>
                                 <ButtonDesign>
-                                    <Link to="/youpage">
-                                        <button type="submit" className="blackBtn" onClick={onClick}>
-                                            다음으로
-                                        </button>
-                                    </Link>
+                                    <button type="submit" className="blackBtn" onClick={onClick}>
+                                        다음으로
+                                    </button>
                                 </ButtonDesign>
                             </InputBtnStyle>
                         </div>
