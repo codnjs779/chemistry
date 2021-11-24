@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import "./reset.css";
-import backImg from "../images/0001.PNG";
+import backImg from "../images/0001.png";
 
 export const GlobalStyle = styled.div`
     background-image: url(${backImg});
@@ -8,6 +8,5 @@ export const GlobalStyle = styled.div`
     height: 100%;
     padding-bottom: 50%;
     margin: auto;
-
     font-family: "MaruBuri";
 `;
