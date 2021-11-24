@@ -5,7 +5,7 @@ import { CopyToClipboard } from "react-copy-to-clipboard";
 import axios from "axios";
 
 //img
-import heart from "../img/heart.png";
+import heart from "../images/heart.png";
 
 //style
 import styled from "styled-components";
