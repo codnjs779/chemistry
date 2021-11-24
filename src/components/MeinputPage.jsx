@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
+import { useForm } from "react-hook-form";
+
 import BloodModal from "../modal/BloodModal";
 import MbtiModal from "../modal/MbtiModal";
 
@@ -19,11 +21,7 @@ const MeinputPage = () => {
     const [blood, setBlood] = useState("");
     const [mbti, setMbti] = useState("");
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-    };
-
-    const onClick = () =>
+    const onClick = () => {
         dispatch({
             type: "ADD_ME_DATA",
             payload: {
@@ -34,6 +32,18 @@ const MeinputPage = () => {
                 mbti,
             },
         });
+    };
+
+    // const handleSubmit = (e) => {
+    //     e.preventDefault();
+    // };
+
+    const {
+        register,
+        handleSubmit,
+        formState: { errors },
+    } = useForm();
+    const onSubmit = () => console.log("htll");
 
     return (
         <>
@@ -46,12 +56,14 @@ const MeinputPage = () => {
 
             <InputBoxStyle>
                 <div className="inputBox">
-                    <form onSubmit={handleSubmit}>
+                    <form onSubmit={handleSubmit(onSubmit)}>
                         <div>
                             <label htmlFor="내이름">내 이름</label>
-                            <input type="text" placeholder="이름을 입력해주세요" value={name} onChange={(e) => setName(e.target.value)} />
+                            <input type="text" {...register("name", { required: true })} placeholder="이름을 입력해주세요" value={name} onChange={(e) => setName(e.target.value)} />
                         </div>
+                        {errors.message && alert("이름을 입력하지 않았습니다")}
                         <div className="line" />
+
                         <div className="genderType">
                             <label htmlFor="성별" className="genderTitle">
                                 성별
@@ -99,6 +111,18 @@ const MeinputPage = () => {
                             />
                         </div>
                         <div className="line" />
+
+                        <div className="buttonSet">
+                            <InputBtnStyle>
+                                <ButtonDesign>
+                                    <Link to="/youpage">
+                                        <button type="submit" className="blackBtn" onClick={onClick}>
+                                            다음으로
+                                        </button>
+                                    </Link>
+                                </ButtonDesign>
+                            </InputBtnStyle>
+                        </div>
                     </form>
                     <div
                         className="mbtiLink"
@@ -110,18 +134,6 @@ const MeinputPage = () => {
                     </div>
                 </div>
             </InputBoxStyle>
-
-            <div className="buttonSet">
-                <InputBtnStyle>
-                    <ButtonDesign>
-                        <Link to="/youpage">
-                            <button type="submit" className="blackBtn" onClick={onClick}>
-                                다음으로
-                            </button>
-                        </Link>
-                    </ButtonDesign>
-                </InputBtnStyle>
-            </div>
         </>
     );
 };
@@ -137,23 +149,17 @@ export const InputBoxStyle = styled.div`
         box-shadow: 2px 2px 10px 2px #e2e0e0;
     }
 
-    label {
-        font-weight: bold;
-        font-size: 1rem;
-        color: rgb(51 51 51);
-        margin-left: 15px;
-    }
-
     .genderType {
         .radioInput {
-            margin-left: 30px;
+            margin-left: 35px;
         }
 
         .labelGender {
             position: relative;
+            display: inline-block;
+            width: 40px;
         }
         .labelGender span {
-            padding: 10px;
         }
     }
 
@@ -163,7 +169,7 @@ export const InputBoxStyle = styled.div`
         font-size: 1.1rem;
         margin: 30px 10px 10px 10px;
         width: auto;
-        left: 30px;
+        text-align: center;
     }
 
     input:focus {
@@ -190,12 +196,20 @@ export const InputBoxStyle = styled.div`
         height: 45px;
         margin: auto;
         text-align: center;
-        top: 40px;
     }
 
     .mbtiLink span {
         position: relative;
         top: 12px;
+    }
+
+    label {
+        font-weight: bold;
+        font-size: 1rem;
+        color: rgb(51 51 51);
+        margin-left: 15px;
+        display: inline-block;
+        width: 66px;
     }
 `;
 
