@@ -1,9 +1,9 @@
 import styled from "styled-components";
 import "./reset.css";
-import backImg from "../images/0001.png";
+import check from "../images/check.jpg";
 
 export const GlobalStyle = styled.div`
-    background-image: url(${backImg});
+    background-image: url(${check});
     width: 400px;
     height: 100%;
     padding-bottom: 50%;

@@ -10,6 +10,7 @@ import heart from "../images/inheart.png";
 //style
 import styled from "styled-components";
 import IconModal from "../modal/IconModal";
+
 //fontawesome
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faInfoCircle } from "@fortawesome/free-solid-svg-icons";
