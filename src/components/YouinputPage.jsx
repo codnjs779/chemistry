@@ -78,11 +78,11 @@ const YouinputPage = () => {
                             <label htmlFor="성별" className="genderTitle">
                                 성별
                             </label>
-                            <input type="radio" className="radioInput" value="male" onChange={(e) => setGender(e.target.value)} />
+                            <input type="radio" className="radioInput" value="male" name="gener" onChange={(e) => setGender(e.target.value)} />
                             <label htmlFor="남" className="labelGender">
                                 <span>남</span>
                             </label>
-                            <input type="radio" className="radioInput" value="female" onChange={(e) => setGender(e.target.value)} />
+                            <input type="radio" className="radioInput" value="female" name="gener" onChange={(e) => setGender(e.target.value)} />
                             <label htmlFor="여" className="labelGender">
                                 <span>여</span>
                             </label>

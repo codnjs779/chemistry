@@ -13,7 +13,7 @@ const ResultPage = () => {
     const state = useSelector((state) => state);
     const shareUrl = "https://www.chemistry-test.co.kr/result";
     const [result, setResult] = useState();
-
+    console.log(state);
     useEffect(() => {
         axios
             .post("https://dlsrksrndgkq.link/judgment", {
@@ -22,6 +22,7 @@ const ResultPage = () => {
             })
             .then((res) => {
                 setResult(res.data.result);
+                console.log(res);
             })
             .catch((err) => {
                 console.log(err);

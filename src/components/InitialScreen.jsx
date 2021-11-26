@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { CopyToClipboard } from "react-copy-to-clipboard";
-
 import axios from "axios";
 
 //img
@@ -19,7 +18,7 @@ const InitialScreen = () => {
     const [infoIconModal, setInfoIconModal] = useState(false);
     const [data, setData] = useState();
 
-    const url = "https://chemistry-test.co.kr ";
+    const url = "https://chemistry-test.co.kr";
     const onClick = () => {
         setInfoIconModal(!infoIconModal);
     };
@@ -77,12 +76,6 @@ const InitialScreen = () => {
 };
 
 const InitialContentsBoxStyle = styled.div`
-    .initialContentsBox {
-        width: 400px;
-        height: 100%;
-        margin: auto;
-    }
-
     .infoIcon {
         width: 18pt;
         height: 18pt;
